@@ -1,0 +1,27 @@
+const API_URL = "https://hotel-reservation-dkbtatahhxdwe7cw.polandcentral-01.azurewebsites.net/api";
+
+export async function getAllHotels() {
+  const res = await fetch(`${API_URL}/hotel`, {
+    method: "GET",
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch hotels");
+  }
+
+  return res.json();
+}
+
+export async function getHotelById(id) {
+  const res = await fetch(`${API_URL}/hotel/${id}`, {
+    method: "GET",
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch hotel data");
+  }
+
+  return res.json();
+}
