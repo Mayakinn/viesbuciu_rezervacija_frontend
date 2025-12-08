@@ -1,38 +1,15 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { getAllHotels } from "@/services/hotelService";
-import HotelCard from "@/components/HotelCard";
-
-export default function HotelsPage() {
-  const [hotels, setHotels] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function load() {
-      try {
-        const data = await getAllHotels();
-        setHotels(data);
-      } catch (error) {
-        console.error(error);
-      }
-      setLoading(false);
-    }
-
-    load();
-  }, []);
-
-  if (loading) return <p className="p-6 text-lg">Loading hotels...</p>;
-
+export default function HomePage() {
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold mb-6">All Hotels</h1>
+    <div className="text-center mt-20">
+      <h1 className="text-4xl font-bold">Welcome to Hotel Reviews!</h1>
+      <p className="mt-4 text-lg">Explore all hotels below.</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {hotels.map((hotel) => (
-          <HotelCard key={hotel.id} hotel={hotel} />
-        ))}
-      </div>
+      <a
+        href="/hotels"
+        className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+      >
+        Browse Hotels →
+      </a>
     </div>
   );
 }
