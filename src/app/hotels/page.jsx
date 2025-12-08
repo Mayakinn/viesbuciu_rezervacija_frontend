@@ -1,8 +1,8 @@
+export const dynamic = "force-dynamic";
 import { getAllHotels } from "@/services/hotelService";
 import Link from "next/link";
-
 export default async function HotelsPage() {
-  const hotels = await getAllHotels(); // SSR call
+  const hotels = await getAllHotels();
 
   return (
     <div className="space-y-6">
