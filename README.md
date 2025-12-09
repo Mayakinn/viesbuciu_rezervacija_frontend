@@ -47,6 +47,8 @@ Sistemos tikslas - sukurti viešbučių rezervacijos platformą, leidžiančią 
 <img width="1919" height="941" alt="image" src="https://github.com/user-attachments/assets/630b6c3c-52cc-4995-9482-f1aa67c69f62" />
 
 ## API specifikacija
+[YAML failas](https://github.com/Mayakinn/viesbuciu_rezervacija_frontend/blob/main/swagger.yaml)
+
 GET **/api/Hotel/{id}** – Gauti vieną viešbutį
 ### Responses:
 * 200 OK – Grąžina viešbučio informaciją
